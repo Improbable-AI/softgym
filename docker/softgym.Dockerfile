@@ -61,8 +61,8 @@ RUN chmod +x /tmp/install_softgym.sh && /tmp/install_softgym.sh
 COPY ./install_pkgs.sh /tmp/install_pkgs.sh
 RUN chmod +x /tmp/install_pkgs.sh && /tmp/install_pkgs.sh
 
-COPY ./entrypoint.sh /
+ENV PYFLEXROOT /workspace/softgym/PyFlex
+ENV PYTHONPATH ${PYFLEXROOT}/bindings/build
+ENV LD_LIBRARY_PATH ${PYFLEXROOT}/external/SDL2-2.0.4/lib/x64:${LD_LIBRARY_PATH}
 
-
-ENTRYPOINT ["./entrypoint.sh"]
 CMD ["bash"]
