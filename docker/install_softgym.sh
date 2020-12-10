@@ -2,7 +2,7 @@
 
 set -euxo pipefail
 
-git clone https://github.com/Xingyu-Lin/softgym.git
+git clone https://github.com/Improbable-AI/softgym.git
 cd softgym
 export PYFLEXROOT=${PWD}/PyFlex
 export PYTHONPATH=${PYFLEXROOT}/bindings/build
