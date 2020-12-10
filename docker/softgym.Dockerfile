@@ -65,4 +65,5 @@ ENV PYFLEXROOT /workspace/softgym/PyFlex
 ENV PYTHONPATH ${PYFLEXROOT}/bindings/build
 ENV LD_LIBRARY_PATH ${PYFLEXROOT}/external/SDL2-2.0.4/lib/x64:${LD_LIBRARY_PATH}
 
+WORKDIR /workspace/softgym
 CMD ["bash"]
