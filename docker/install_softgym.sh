@@ -13,6 +13,6 @@ mkdir build
 cd build
 cmake -DPYBIND11_PYTHON_VERSION=3.7 -Dpybind11_DIR=/usr/local/lib/python3.7/dist-packages/pybind11/share/cmake/pybind11 ..
 make -j
-cd ../../
+cd ../../../
 pip install -e .
 mkdir data
