@@ -7,7 +7,26 @@ docker pull improbableailab/softgym
 ```
 `Tmux`, `vscode`, `sublime` have been installed.
 
-## Run softgym examples
+## Launch the docker and Run softgym examples
+
+In terminal 1
+```
+docker run -it \
+    --env="DISPLAY" \
+    --env="QT_X11_NO_MITSHM=1" \
+    --env="XAUTHORITY=/tmp/.docker.xauth" \
+    --privileged \
+    --runtime=nvidia \
+    --net=host \
+    softgym:latest
+```
+In another terminal (terminal 2) (this is for GUI visualization inside the docker):
+```
+xhost +local:
+```
+
+In the docker (terminal 1):
+
 ```
 python examples/random_env.py --env_name PassWater
 ```
