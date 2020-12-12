@@ -20,6 +20,19 @@ docker run -it \
     --net=host \
     softgym:latest
 ```
+To mount a directory (`data`), then launch the docker with the following command instead:
+```
+docker run -it \
+    --env="DISPLAY" \
+    --env="QT_X11_NO_MITSHM=1" \
+    --env="XAUTHORITY=/tmp/.docker.xauth" \
+    --volume="$PWD/data:/workspace/softgym/data" \
+    --privileged \
+    --runtime=nvidia \
+    --net=host \
+    softgym:latest
+
+```
 In another terminal (terminal 2) (this is for GUI visualization inside the docker):
 ```
 xhost +local:
